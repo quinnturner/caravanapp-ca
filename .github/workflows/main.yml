@@ -1,12 +1,12 @@
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
+# Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,4 +27,4 @@ jobs:
           cmd: build # will run `yarn build` command
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: test # will run `yarn test` command
+          cmd: test:ci # will run `yarn test:ci` command which sets CI=true and then runs `yarn test` in parallel
